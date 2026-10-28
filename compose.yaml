@@ -1,0 +1,9 @@
+services:
+  benchmark:
+    build: .
+    network_mode: none
+    volumes:
+      - ./test_assets:/assets:ro
+      - ./labels.json:/labels.json:ro
+      - ./results:/results
+    command: ["--labels", "/labels.json"]
